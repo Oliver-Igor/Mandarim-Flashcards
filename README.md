@@ -1,2 +1,4 @@
 # Mandarim-Flashcards
-Flashcards de mandarim
+## Flashcards de mandarim
+--
+As cartas contém frases nivel HSK3
