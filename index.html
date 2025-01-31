@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Teste de Estilos para Cards de Ideogramas</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    
+    <div class="grid-conteudo" id="gridConteudo">
+        <!-- Cards de ideogramas serão inseridos aqui via JavaScript -->
+    </div>
+
+    <button id="abrirFlashcards" class="botao-flashcard">
+        <i class="fas fa-graduation-cap"></i> Praticar com Flashcards
+    </button>
+    
+    <!-- Modal -->
+    <div id="flashcardModal" class="modal-flashcard">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            
+            <div class="flashcard-container">
+                <div class="controles">
+                    <button id="anterior" class="controle-btn" title="Anterior" >
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="contador">
+                        <span id="contadorAtual">1</span>/<span id="totalCartas">150</span>
+                    </div>
+                    
+                    <button id="proximo" class="controle-btn" title="Próximo" >
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+    
+                <div class="flashcard" id="flashcard">
+                    <div class="frente" onclick="lerEmVozAlta()">
+                        <div class="ideograma" id="ideogramaAtual">人</div>
+                        
+                        <!-- Botão que aciona a leitura -->
+                    </div>
+                    <div class="verso">
+                        <div class="traducao" id="traducaoAtual">Pessoa, Ser humano</div>
+                        <div class="pinyin" id="pinyinAtual">rén</div>
+                    </div>
+                </div>
+    
+                <button id="randomCard" class="botao-aleatorio">
+                    <i class="fas fa-random"></i> Carta Aleatória
+                </button>
+            </div>
+        </div>
+    </div>
+    <script type="module" >
+        import { lerEmVozAlta } from './script.js';
+        document.querySelector('.frente').onclick = lerEmVozAlta;
+    </script>
+</body>
+</html>

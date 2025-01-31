@@ -1,0 +1,163 @@
+:root {
+    --cor-hsk1: #007bff; /* Defina a cor desejada aqui */
+}
+
+/* Estilos do modal */
+.modal-flashcard {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-conteudo {
+    background: white;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh; /* Garante altura mínima */
+}
+
+.fechar-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.fechar-modal:hover {
+    color: #777;
+}
+
+.flashcard-container {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem; /* Adiciona um padding interno */
+    box-sizing: border-box; /* Garante que o padding não estoure o container */
+}
+
+.flashcard {
+    position: relative;
+    width: 100%; /* Usa 100% do container */
+    max-width: 300px; /* Limita a largura máxima */
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin: 0; /* Remove margens desnecessárias */
+    flex-shrink: 0; /* Impede que o flashcard encolha */
+}
+.frente, .verso {
+    position: absolute;
+    width: 236px;
+    height: 84%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.6s;
+}
+
+.frente {
+    background: var(--cor-hsk1);
+    color: white;
+}
+
+.verso {
+    background: white;
+    color: #333;
+    transform: rotateY(180deg);
+}
+
+.flashcard.virar .frente {
+    transform: rotateY(180deg);
+}
+
+.flashcard.virar .verso {
+    transform: rotateY(0deg);
+}
+
+.ideograma {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.pinyin {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.traducao {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Controles */
+.controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 1rem 0;
+}
+
+.controle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #8f1111;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.contador {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.botao-aleatorio {
+    background: var(--cor-hsk1);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+.botao-flashcard {
+    background: var(--cor-hsk1);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin: 2rem auto;
+    display: block;
+}
